@@ -1,0 +1,8 @@
+<Project>
+    <PropertyGroup>
+        <RepositoryUrl>https://github.com/fsprojects/FSharp.AWS.DynamoDB</RepositoryUrl>
+        <FsDocsLicenseLink>https://github.com/fsprojects/FSharp.AWS.DynamoDB/blob/master/License.md</FsDocsLicenseLink>
+        <FsDocsReleaseNotesLink>https://github.com/fsprojects/FSharp.AWS.DynamoDB/blob/master/RELEASE_NOTES.md</FsDocsReleaseNotesLink>
+        <PackageProjectUrl>https://onurgumus.github.io/fsdocs_test/</PackageProjectUrl>
+    </PropertyGroup>
+</Project>
