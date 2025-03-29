@@ -14,29 +14,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
 
       - name: Restore tools
         run: dotnet tool restore
 
-      - name: Build code
-        run: dotnet build -c Release YourSolution.sln
+    #   - name: Build code
+    #     run: dotnet build -c Release YourSolution.sln
 
-      - name: Generate the documentation
+      - name: Generate documentation
         run: dotnet fsdocs build --properties Configuration=Release
 
-      # Pre-fetch upload-artifact@v3 to fix missing download info error
-      - name: Workaround for upload-artifact@v3
-        uses: actions/upload-artifact@v3
-        with:
-          name: dummy
-          path: .gitignore
-
-      - name: Upload documentation
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./output
 
@@ -45,5 +39,4 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
