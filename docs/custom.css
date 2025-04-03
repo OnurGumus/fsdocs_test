@@ -1,0 +1,12 @@
+/* Hide last 4 items in the navigation menu (assumed built-in links) */
+.fsdocs-navbar .nav > li:nth-last-child(-n+4) {
+    display: none !important;
+}
+
+/* Hide the built-in links in the navigation */
+.nav-link[href*="license"],
+.nav-link[href*="release-notes"],
+.nav-link[href*="repository"],
+.nav .nav-header:contains("Links") {
+    display: none !important;
+}
